@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<openerp>
+  <data>
+	  <record id="view_form_cours" model="ir.ui.view">
+		<field name="name"> Cours Form</field>
+		<field name="model">mod.cours</field>
+	        <field name="arch" type="xml">
+                <form >
+		 <group >
+			<field name="nom"/>
+		        <field name="description"/>
+			<field name="nb_s"/>
+		        <field name="enseignant"/>
+	         </group>
+		</form>	
+              </field>
+	 </record>
+	 <act_window id="action_cours_v"
+	  name="Cours_act"
+	  res_model="mod.cours"
+	  view_mode="form" />
+	  <menuitem id="menu _cours_v"
+	  name="Cours"
+	  parent="menu_todo_ins_task"
+	  sequence="20"
+	  action="action_cours_v" />
+	 
+  
+  </data>
+</openerp>

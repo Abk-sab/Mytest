@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<openerp>
+  <data>
+	  <record id="view_form_ins_task" model="ir.ui.view">
+		<field name="name"> Inscription Form</field>
+		<field name="model">mod.inscription</field>
+		<field name="arch" type="xml">
+	  
+		   <form >
+			<header>
+			   <label string="Inscription En ligne"/>
+			</header>
+		<sheet>
+			<notebook>
+		  <page string='Inscription'>
+			 <field name="image1" widget="image" class="oe_left oe_avatar"/>
+			 
+			   
+				<group name="group_left">
+					<field name="nom"/>
+					<field name="prenom"/>
+					<field name="ddn"/>
+					<field name="sexe"/>
+					<button name="call_wizz" type="object" string="inscription"  class="oe_highlight"/>
+				</group>
+				
+		  </page>	
+		  
+		  
+
+			</notebook>
+
+		 </sheet>
+		</form>
+	 </field>
+		  
+	 </record>
+	 <!-- Action to open To-do Task list -->
+	 <act_window id="action_todo_ins_task"
+	  name="Inscription_Task"
+	  res_model="mod.inscription"
+	  view_mode="form" />
+	  <menuitem id="menu_todo_ins_task"
+	  name="Inscription Task"
+	  parent="mail.mail_feeds"
+	  sequence="20"
+	  action="action_todo_ins_task" />
+  
+  </data>
+</openerp>

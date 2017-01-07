@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<openerp>
+  <data>
+	  <record id="view_form_ins_wiz" model="ir.ui.view">
+		<field name="name"> Inscription_wizz Form</field>
+		<field name="model">wizard.ins</field>
+		<field name="arch" type="xml">
+	  
+		   <form >
+			<header>
+			   <label string="Inscription En ligne"/>
+			   <button name="act_save" states="draft" type="object" string="Save" class="oe_highlight"/>
+                <button name="act_download" class="oe_highlight" states="save" type="object" string="Download" />
+                <field name="state" widget="statusbar" statusbar_visible="draft,enregistrer,download" /> 
+			</header>
+		<sheet>
+			
+			 <!--field name="image1" widget="image" class="oe_left oe_avatar"/-->
+			 
+			   
+				<!--group name="group_left">
+					<field name="nom"/>
+					
+					<field name="ddn" attrs="{'readonly':[('state','!=','draft')]}" />
+					<field name="sexe" attrs="{'readonly':[('state','!=','draft')]}" />
+					<field name="cours" attrs="{'readonly':[('state','!=','draft')]}" />
+					<field name="ens_par" attrs="{'readonly':[('state','!=','draft')]}" /-->
+
+					
+
+				<!--/group>
+				<footer>
+					
+					
+					<button string="Annuler" class="btn-default" special="cancel"/>
+				</footer-->	
+		 
+
+		 </sheet>
+		</form>
+	 </field>
+		  
+	 </record>
+	 <!-- Action to open To-do Task list -->
+	 <record id="action_view_wizard" model="ir.actions.act_window">
+      <field name="name">Inscription</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">wizard.ins</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="view_form_ins_wiz"/>
+      <field name="target">new</field>
+    </record>
+  
+  </data>
+</openerp>

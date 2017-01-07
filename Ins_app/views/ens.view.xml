@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<openerp>
+  <data>
+	  <record id="view_form_ens" model="ir.ui.view">
+		<field name="name"> Enseignnat Form</field>
+		<field name="model">mod.enseignant</field>
+		
+		<field name="arch" type="xml">
+	  
+			
+		    <form>
+
+			 <field name="image2" widget="image" class="oe_left oe_avatar"/>
+			 
+			   
+				<group >
+					<field name="nom"/>
+					<field name="prenom"/>
+					<field name="grade"/>
+					<field name="cours_ens"/>
+				</group>
+				
+		     
+		 </form>
+
+		 
+	       </field>
+		  
+	 </record>
+	 <act_window id="action_ens_v"
+	  name="ens_act"
+	  res_model="mod.enseignant"
+	  view_mode="form" />
+	  <menuitem id="menu_ens_v"
+	  name="Enseignant"
+	  parent="menu_todo_ins_task"
+	  sequence="20"
+	  action="action_ens_v" />
+	 
+  
+  </data>
+</openerp>
